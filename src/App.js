@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {BrowserRouter as Router, Route } from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import HomeContainer from './containers/HomeContainer';
 import './App.css';
 
 class App extends Component{
@@ -16,10 +17,12 @@ class App extends Component{
     return(
       <Router>
         <div>
-          <Route exact path="/" component={this.renderHome}></Route>
+          <Route exact path="/" component={HomeContainer}></Route>
           <Route exact path="/customers" component={this.renderCustomerListContainer}></Route>
-          <Route exact path="/customer/:dni" component={this.renderCustomerContainer}></Route>
-          <Route exact path="/customers/new" component={this.renderCustomerNewContainer}></Route>
+          <Switch>
+            <Route path="/customers/new" component={this.renderCustomerNewContainer}></Route>
+            <Route path="/customer/:dni" component={this.renderCustomerContainer}></Route>
+          </Switch>
         </div>
       </Router>
     )
