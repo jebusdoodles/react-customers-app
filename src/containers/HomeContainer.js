@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom'; 
 import AppFrame from './../components/AppFrame'; 
-import CustomersActions from './../components/CustomersActions'; 
-
+import CustomersActions from './../components/CustomersActions';
 class HomeContainer extends Component {
 
     handleOnClick = () => {
