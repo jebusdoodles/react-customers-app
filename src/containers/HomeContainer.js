@@ -5,7 +5,6 @@ import CustomersActions from './../components/CustomersActions';
 class HomeContainer extends Component {
 
     handleOnClick = () => {
-        console.log("click"); 
         this.props.history.push('/customers');
     }
     render(){
