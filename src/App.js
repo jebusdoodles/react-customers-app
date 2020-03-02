@@ -23,7 +23,10 @@ class App extends Component{
           <Route exact path="/customers" component={CustomersContainer}></Route>
           <Switch>
             <Route path="/customers/new" component={this.renderCustomerNewContainer}></Route>
-            <Route path="/customer/:dni" component={this.renderCustomerContainer}></Route>
+            <Route 
+                  path="/customer/:dni" 
+                  render={ props => <CustomerContainer {...props} dni ={props.match.params.dni} />}>
+            </Route>
           </Switch>
         </div>
       </Router>
