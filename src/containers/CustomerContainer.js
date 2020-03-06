@@ -9,14 +9,14 @@ import CustomerData from './../components/CustomerData';
 
 class CustomerContainer extends Component {
     renderBody = () =>(
+         //nueva version de Ruteo dinamico de React Router
         <Route path="/customer/:dni/edit" children={
-            //nueva version de Ruteo dinamico de React Router
-            ({ match }) => (
-                match ? 
-                    // destructuring para evitar mencionar cada uno de los elementos
-                    <CustomerEdit {...this.props.customer}  />
-                : 
-                    <CustomerData {...this.props.customer} />)
+            ({ match }) => {
+                    // comparación para mostrar uno o otro contenedor
+                    const CustomerControl = match ? CustomerEdit : CustomerData;
+                    // destructuring
+                    return <CustomerControl {...this.props.customer} />
+                }
         }></Route>
     )
     render() {
