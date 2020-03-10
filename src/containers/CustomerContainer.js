@@ -15,6 +15,7 @@ class CustomerContainer extends Component {
                     // comparación para mostrar uno o otro contenedor
                     const CustomerControl = match ? CustomerEdit : CustomerData;
                     // destructuring
+                    // initial Values propiedad establecida en redux-form
                     return <CustomerControl {...this.props.customer} />
                 }
         }></Route>
