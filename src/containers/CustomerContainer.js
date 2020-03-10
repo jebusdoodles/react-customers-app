@@ -31,6 +31,10 @@ class CustomerContainer extends Component {
     }
 }
 
+CustomerContainer.propTypes = {
+    dni: PropTypes.string.isRequired,
+    customer: PropTypes.object.isRequired,
+};
 
 const mapStateToProps = (state, props) => ({
     customer: getCustomersByDni(state, props),
