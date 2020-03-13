@@ -35,7 +35,7 @@ CustomerEdit.propTypes = {
     // Decoramos el componente CustomerEdit mediante un highorder component
     // que nos prové la libreria redux-form  tiene que ser unico
     const CustomerEditForm = reduxForm({ form: 'CustomerEdit' })(CustomerEdit)
-    
+    //connect y map state to props para manejar los datos del state en initialValues
 export default connect(
     (state, props) => (
         { initialValues: props}
